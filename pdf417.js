@@ -590,7 +590,7 @@ var PDF417 = {
 		var sequence_array = []; // array to be returned
 		var numseq = [];
 		// get numeric sequences		
-		numseq = code.match(/([0-9]{13,})/g);
+		numseq = code.match(/([0-9]{13,44})/g);
 		if (numseq == null) {
 			numseq = [];			
 		} else {
