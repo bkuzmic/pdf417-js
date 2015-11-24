@@ -595,8 +595,8 @@ var PDF417 = {
 			numseq = [];			
 		} else {
 			// add offset to each matched line
-			for (var n=0;n<numseq.length;n++) {
-				var offset = code.indexOf(numseq[n]);
+			for (var n = 0, offset=0; n < numseq.length; n++, offset++) {
+				offset = code.indexOf(numseq[n], offset);
 				numseq[n] = [numseq[n], offset];
 			}
 		}
