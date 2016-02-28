@@ -1,3 +1,8 @@
+/**
+ * PDF417 - 2D Barcode generator (LGPLv3)
+ *
+ * Ported from PHP - PDF417 class, version 1.0.005, from TCPDF library (http://www.tcpdf.org/)
+ */
 var PDF417 = {
 	ROWHEIGHT: 4,
 	QUIETH: 2,
@@ -731,11 +736,16 @@ var PDF417 = {
 						t = bcadd(t, bcmul('' + this._ord(code.charAt(3)), '65536'));
 						t = bcadd(t, bcmul('' + this._ord(code.charAt(4)), '256'));
 						t = bcadd(t, '' + this._ord(code.charAt(5)));
+						// tmp array for the 6 bytes block
+						var cw6 = [];
 						do {
 							var d = this._my_bcmod(t, '900');
 							t = bcdiv(t, '900');
-							cw.unshift(d);
+							// prepend the value to the beginning of the array
+							cw6.unshift(d);
 						} while (t != '0');
+						// append the result array at the end
+						cw = cw.concat(cw6);
 					} else {
 						for (var i = 0; i < sublen; ++i) {
 							cw.push(this._ord(code.charAt(i)));
