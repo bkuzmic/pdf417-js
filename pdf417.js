@@ -595,10 +595,11 @@ var PDF417 = {
 			numseq = [];			
 		} else {
 			// add offset to each matched line
-			for (var n = 0, offset=0; n < numseq.length; n++, offset++) {
-				offset = code.indexOf(numseq[n], offset);
-				numseq[n] = [numseq[n], offset];
-			}
+			for (var n = 0, offset = 0; n < numseq.length; n++) {
+        offset = code.indexOf(numseq[n], offset);
+      	numseq[n] = [numseq[n], offset];
+        offset += numseq[n][0].length;
+      }
 		}
 		numseq.push(['', code.length]);
 		var offset = 0;
