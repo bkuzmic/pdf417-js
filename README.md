@@ -15,3 +15,6 @@ Version used for porting is tcpdf_6_2_11 or more specific PDF417 class version 1
 Also using helper methods from:
 http://bcmath-js.sourceforge.net/
 
+Demo:
+http://bkuzmic.github.io/pdf417-js/
+
