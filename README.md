@@ -1,5 +1,4 @@
-pdf417-js
-=========
+# PDF417-js
 
 PDF417 - 2D barcode generator in Javascript
 
@@ -15,7 +14,6 @@ Version used for porting is tcpdf_6_2_11 or more specific PDF417 class version 1
 Also using helper methods from:
 http://bcmath-js.sourceforge.net/
 
-Demo
-====
+##Demo
 http://bkuzmic.github.io/pdf417-js/
 
